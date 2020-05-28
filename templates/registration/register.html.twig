@@ -1,15 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}inscription{% endblock %} {% block body %}
 
-{% block title %}Register{% endblock %}
+<div class="container-fluid">
 
-{% block body %}
-    <h1>Register</h1>
+    <header class="row">
+        <h1 class="col-12 bg-light text-center text-dark p-5">
+            KILOUKOI
+            <div class="dropdown-divider"></div>
+            <span class="text-secondary">INSCRIVEZ VOUS</span>
+        </h1>
+    </header>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 p-5 my-5 bg-secondary rounded text-white">
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        {{ form_start(registrationForm) }} {{ form_label(registrationForm.email) }} {{ form_widget(registrationForm.email) }} {# {{ form_row(registrationForm.email) }} #} {{ form_row(registrationForm.plainPassword) }} {{ form_row(registrationForm.agreeTerms)
+        }}
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-outline-light">VALIDATION</button>
+            </div>
+        </div>
+
+        {{ form_end(registrationForm) }}
+
+    </div>
+
+</div>
+
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -55,6 +57,16 @@ class User implements UserInterface
      * @ORM\Column(type="integer", nullable=true)
      */
     private $telephone;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Outils::class, mappedBy="user")
+     */
+    private $outils;
+
+    public function __construct()
+    {
+        $this->outils = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -178,6 +190,34 @@ class User implements UserInterface
     public function setTelephone(?int $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Outils[]
+     */
+    public function getOutils(): Collection
+    {
+        return $this->outils;
+    }
+
+    public function addOutil(Outils $outil): self
+    {
+        if (!$this->outils->contains($outil)) {
+            $this->outils[] = $outil;
+            $outil->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOutil(Outils $outil): self
+    {
+        if ($this->outils->contains($outil)) {
+            $this->outils->removeElement($outil);
+            $outil->removeUser($this);
+        }
 
         return $this;
     }

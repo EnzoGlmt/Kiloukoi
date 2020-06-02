@@ -9,6 +9,8 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -20,8 +22,31 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        
-    
+        ->add('prenom', TextType::class, [
+            'attr' => [
+                'placeholder' => 'Prenom'
+            ]
+        ])
+
+        ->add('nom', TextType::class, [
+            'attr' => [
+                'placeholder' => 'Nom'
+            ]
+        ])
+
+        ->add('adresse', TextType::class, [
+            'attr' => [
+                'placeholder' => 'Adresse'
+            ]
+        ])
+
+        ->add('telephone', TelType::class, [
+            'attr' => [
+                'placeholder' => 'Telephone'
+            ]
+        ])
+
+
             ->add('email', EmailType::class, [
                 'attr' => [
                     'placeholder' => 'Email'
@@ -62,7 +87,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Mot de passe'
                 ],
-                'label' => 'Mot de passe '
+                'label' => 'Mot de passe'
             ])
         ;
     }

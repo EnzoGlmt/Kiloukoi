@@ -22,10 +22,10 @@ class Outils
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom_outil;
+    private $outil;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -49,14 +49,14 @@ class Outils
         return $this->id;
     }
 
-    public function getNomOutil(): ?string
+    public function getOutil(): ?string
     {
-        return $this->nom_outil;
+        return $this->outil;
     }
 
-    public function setNomOutil(string $nom_outil): self
+    public function setOutil(string $outil): self
     {
-        $this->nom_outil = $nom_outil;
+        $this->outil = $outil;
 
         return $this;
     }

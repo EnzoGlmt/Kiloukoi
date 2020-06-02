@@ -39,9 +39,15 @@ class Outils
      */
     private $user;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Categories::class, mappedBy="outils")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,6 +112,34 @@ class Outils
     {
         if ($this->user->contains($user)) {
             $this->user->removeElement($user);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Categories[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Categories $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->addOutil($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categories $category): self
+    {
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
+            $category->removeOutil($this);
         }
 
         return $this;

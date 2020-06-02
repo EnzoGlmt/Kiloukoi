@@ -23,24 +23,29 @@ class RegistrationFormType extends AbstractType
     {
         $builder
         ->add('prenom', TextType::class, [
+            'label' => false,
             'attr' => [
                 'placeholder' => 'Prenom'
             ]
         ])
 
         ->add('nom', TextType::class, [
+            'label' => false,
             'attr' => [
                 'placeholder' => 'Nom'
             ]
         ])
 
         ->add('adresse', TextType::class, [
+            'label' => false,
             'attr' => [
                 'placeholder' => 'Adresse'
             ]
         ])
 
-        ->add('telephone', TelType::class, [
+        ->add('telephone', TextType::class, [
+            'required'=> false,
+            'label' => false,
             'attr' => [
                 'placeholder' => 'Telephone'
             ]
@@ -48,6 +53,7 @@ class RegistrationFormType extends AbstractType
 
 
             ->add('email', EmailType::class, [
+                'label' => false,
                 'attr' => [
                     'placeholder' => 'Email'
                 ]
@@ -64,6 +70,7 @@ class RegistrationFormType extends AbstractType
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'label' => false,
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
@@ -84,10 +91,10 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial'
                     ])
                 ],
-                'attr' => [
+                'attr' => [                
                     'placeholder' => 'Mot de passe'
                 ],
-                'label' => 'Mot de passe'
+                
             ])
         ;
     }

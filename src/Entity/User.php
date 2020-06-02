@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="Cet email existe déjà !")
  */
 class User implements UserInterface
 {
@@ -24,7 +24,8 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180)
+     * 
      */
     private $email;
 
@@ -35,7 +36,7 @@ class User implements UserInterface
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string")     
      */
     private $password;
 
@@ -48,7 +49,7 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)     
      * @Assert\Length(
      *      min = 2,           
-     *      minMessage = "Le champ doit contenir au moins {{ limit }} caractères",
+     *      minMessage = "Le nom doit contenir au moins {{ limit }} caractères",
      *      allowEmptyString = false
      * )
      */
@@ -59,7 +60,7 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      *      min = 2,           
-     *      minMessage = "Le champ doit contenir au moins {{ limit }} caractères",
+     *      minMessage = "Le prénom doit contenir au moins {{ limit }} caractères",
      *      allowEmptyString = false
      * )     
      */
@@ -67,6 +68,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", nullable=true)
+     *  * @Assert\Length(
+     *      min = 9,
+     *      max = 15,
+     *      minMessage = "Votre numéro doit contenir au moins {{ limit }} chiffres",
+     *      maxMessage = "Votre numéro ne doit pas contenir plus de  {{ limit }} chiffres",
+     *      allowEmptyString = true
+     * )
      */
     private $telephone;
 

@@ -12,8 +12,15 @@
 
     <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 p-5 my-5 bg-secondary rounded text-white">
 
-        {{ form_start(registrationForm) }} {{ form_row(registrationForm.prenom) }} {{ form_row(registrationForm.nom) }} {{ form_row(registrationForm.adresse) }} {{ form_row(registrationForm.telephone) }} {{ form_label(registrationForm.email) }} {{ form_widget(registrationForm.email)
-        }} {# {{ form_row(registrationForm.email) }} #} {{ form_row(registrationForm.plainPassword) }} {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_start(registrationForm) }}
+
+        <div class="form-group">{{ form_row(registrationForm.prenom) }}</div>
+        <div class="form-group">{{ form_row(registrationForm.nom) }}</div>
+        <div class="form-group">{{ form_row(registrationForm.adresse) }}</div>
+        <div class="form-group">{{ form_row(registrationForm.telephone)}}</div>
+        <div class="form-group">{{ form_row(registrationForm.email) }}</div>
+        <div class="form-group">{{ form_row(registrationForm.plainPassword) }}</div>
+        <div class="form-group">{{ form_row(registrationForm.agreeTerms) }}</div>
 
         <div class="row">
             <div class="col-12 text-center">

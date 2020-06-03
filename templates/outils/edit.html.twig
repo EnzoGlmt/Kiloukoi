@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Outils{% endblock %}
+
+{% block body %}
+    <h1>Edit Outils</h1>
+
+    {{ include('outils/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('outils_index') }}">back to list</a>
+
+    {{ include('outils/_delete_form.html.twig') }}
+{% endblock %}

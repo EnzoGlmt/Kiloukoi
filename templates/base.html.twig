@@ -21,17 +21,6 @@
     </head>
 
     <body>
-     
-
-        {% for label, messages in app.flashes(['success', 'warning']) %}
-            {% for message in messages %}
-                <div class="flash-{{ label }}">
-                    <div class="col-12 p-3 text-center fixed-bottom bg-{{ label }}">
-                        {{ message }}
-                    </div>
-                </div>
-            {% endfor %}
-        {% endfor %}
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

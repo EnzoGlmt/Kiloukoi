@@ -14,9 +14,11 @@ class OutilsType extends AbstractType
         $builder
             ->add('outil')
             ->add('description')
-            ->add('image')
-            ->add('user')
+            ->add('image')            
             ->add('categories')
+            ->add('prix')
+            
+            
         ;
     }
 

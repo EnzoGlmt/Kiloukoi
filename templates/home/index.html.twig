@@ -1,57 +1,55 @@
-{% extends 'base.html.twig' %}
 
+{% extends 'base.html.twig' %}
 {% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 {% endblock %}
 
 {% block body %}
 
-<div class="container-fluid p-0">
-
-    <header class="bg-dark my-auto">
-        <h1 class="text-center">KILOUKOI</h1>
-        <h2 class="text-center">L'agence de location d&egrave;outils 2.0</h2>
-    </header>
+<div class="container-fluid p-0 mainAcceuil">
 
     <div id="content">
 
         <h2 class="text-center text-dark p-5">{% trans %}Nos annonces{% endtrans %}</h2>
-        
+
         <div class="row p-5 m-0">
             {% for outil in outils %}
-                {% if loop.index <= 6 %}
-                    <div class="col-md-6 col-lg-4 p-3">
-                        <div class="card">
-                            <img class="card-img-top" src="./img/outils/{{ outil.img1 }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ outils.titre|u.truncate(35, '...') }}</h5>
-                                <p class="card-text">{{ outils.descriptif|u.truncate(130, '...') }}</p>
-                            
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Date : {{ outil.createdAt|date("Y/m/d h:i:s") }}</li>
-                                <li class="list-group-item list-group-item-secondary">{% trans %}Prix{% endtrans %} : {{ outils.prix|number_format(0, ',', ' ') }} €</li>
-                                <li class="list-group-item">{% trans %}Les plus{% endtrans %} : 
-                                    <ul>
-                                        {% if outil.location == true %}
-                                            <li>{% trans %}location{% endtrans %}</li>
-                                        {% endif %}
-                                        {% if outil.louer == true %}
-                                            <li>{% trans %}louer{% endtrans %}</li>
-                                        {% endif %}
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="card-body text-center">
-                                <a href="#" class="card-link btn btn-outline-secondary">{% trans %}Voir le d&eacute;tail{% endtrans %}</a>
-                            </div>
-                        </div>
+            {% if loop.index <= 6 %}
+            <div class="col-md-6 col-lg-4 p-3">
+                <div class="card">
+                    <img class="card-img-top" src="./img/outils/{{ outil.img1 }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ outils.titre|u.truncate(35, '...') }}</h5>
+                        <p class="card-text">{{ outils.descriptif|u.truncate(130, '...') }}</p>
+
                     </div>
-                {% endif %}
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Date : {{ outil.createdAt|date("Y/m/d h:i:s") }}</li>
+                        <li class="list-group-item list-group-item-secondary">{% trans %}Prix{% endtrans %} :
+                            {{ outils.prix|number_format(0, ',', ' ') }} €</li>
+                        <li class="list-group-item">{% trans %}Les plus{% endtrans %} :
+                            <ul>
+                                {% if outil.location == true %}
+                                <li>{% trans %}location{% endtrans %}</li>
+                                {% endif %}
+                                {% if outil.louer == true %}
+                                <li>{% trans %}louer{% endtrans %}</li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link btn btn-outline-secondary">{% trans %}Voir le
+                            d&eacute;tail{% endtrans %}</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
+    </div>
+</div>
 
 {% endblock %}
-

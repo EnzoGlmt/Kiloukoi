@@ -44,6 +44,11 @@ class Outils
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -141,6 +146,18 @@ class Outils
             $this->categories->removeElement($category);
             $category->removeOutil($this);
         }
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

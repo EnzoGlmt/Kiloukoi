@@ -1,2 +1,14 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    exception_controller: null
+    form_themes: ['bootstrap_4_layout.html.twig']
+    globals:
+        copyright: 'Copyright © 2020 - Anais CRENIER, Christophe Lassure, Enzo .... , Jonathan ....'
+        contact_nom: 'KILOUKOI'
+        contact_adresse: '21 rue de Jeloukoi'
+        contact_ville: '62200 ville des outils'
+        contact_telephone: '06.27.95.56.22'
+        contact_email: Kiloukoi.contact@gmail.com'
+        

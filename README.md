@@ -85,7 +85,7 @@ php bin/console doctrine:migrations:migrate
 ```
 -Recupere la base de donnée dans la personne a fais un push, faire un pull après avoir fait : 
 '''
-php bin/console doctrine:schema:update --force 
+php bin/console doctrine:schema:update --force
 
 git reset --hard  :cela supprime toute les modifs faite donc faire tres attentions. 
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
         <meta charset="UTF-8">
         <title>{% block title %}KILOUKOI{% endblock %}</title>
         {% block stylesheets %}
@@ -8,10 +9,31 @@
         <link rel="stylesheet" href="{{asset("css/base.css")}}">
         {% endblock %}
         
+=======
+      <meta charset="UTF-8">
+      <meta name="author" content="KILOUKOI">
+      <meta name="description" content="Proposition de services a  louer ou vendre  ">
+      <meta name="keywords" content="Location d'outils">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <title>
+          KILOUKOI - 
+          {% block title %} {% trans %}Bienvenue {% endtrans %}{% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset("css/base.css")}}">
+
+        {% block stylesheets %}{% endblock %}
+>>>>>>> 6cb4bb1a101df8469d41bd7d7cf62b6a091e1ce2
 
     </head>
-    <body>
 
+    <body>
+     
+
+<<<<<<< HEAD
         <header>
             
             <nav class="navbar navbar-expand-lg bg-warning">
@@ -43,22 +65,54 @@
 </nav>
                 
         </header>
+=======
+        {% for label, messages in app.flashes(['success', 'warning']) %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    <div class="col-12 p-3 text-center fixed-bottom bg-{{ label }}">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+>>>>>>> 6cb4bb1a101df8469d41bd7d7cf62b6a091e1ce2
 
-        
-        {% block body %}
-        
-        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
 
-        <footer>
+        <footer class="bg-light">
+          <div class="container-fluid">
+              <div class="row text-center text-dark">
+                  <div class="col-md-4 p-5 my-auto">
+                      <p>QUELQUES LIENS</p>
+                      <p class="dropdown-divider"></p>
+                      <ul>
+                          <li><a href="{{ path('home') }}">Accueil</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-4 p-5 my-auto">
+                          <span class="logo"><img src="{{ asset('img/logo1.png') }}" alt="logo KILOUKOI"></span>
+                      </div>
 
+                    <div class="col-md-4 p-5 my-auto">
+                        <p>COORDONN&Eacute;ES</p>
+                        <p class="dropdown-divider"></p>
+                        <p>{{ contact_nom }}</p>
+                        <p>{{ contact_adresse }}</p>
+                        <p>{{ contact_ville}}</p>
+                        <p>{{ contact_telephone }}</p>
+                        <p>{{ contact_email }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>{{ copyright }}</p>
+                    </div>
+                </div>
         </footer>
 
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        {% endblock %}
-
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     </body>
 </html>

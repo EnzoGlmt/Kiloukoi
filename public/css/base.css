@@ -1,4 +1,33 @@
+<<<<<<< HEAD
 
 .navbar-toggler-icon{
     color: black;
 }
+=======
+/* **************************************** SETTINGS **************************************** */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    list-style-type: none;
+}
+/* **************************************** FOOTER **************************************** */
+
+footer .logo img{
+    width: 70%;
+}
+/* .bg-light {
+backg*/
+.bg-light {
+    background-color: #ff00ff;;
+    }
+footer a{
+    color: #000;
+}
+
+    footer a:hover{
+        color: #888;
+    }
+>>>>>>> 6cb4bb1a101df8469d41bd7d7cf62b6a091e1ce2

@@ -1,7 +1,7 @@
 security:
     encoders:
         App\Entity\User:
-            algorithm: bcrypt
+            algorithm: auto
 
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -37,4 +37,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/user, roles: ROLE_ADMIN }
+         # - { path: ^/register, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

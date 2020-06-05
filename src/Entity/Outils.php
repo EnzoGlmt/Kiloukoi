@@ -149,6 +149,7 @@ class Outils
 
         return $this;
     }
+<<<<<<< HEAD
 
     public function getPrix(): ?int
     {
@@ -162,3 +163,6 @@ class Outils
         return $this;
     }
 }
+=======
+}
+>>>>>>> 5446b855b3bee32406bcaaeacaf0f088f0785b34

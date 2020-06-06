@@ -2,106 +2,100 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="KILOUKOI">
-  <meta name="description" content="Proposition de services a  louer ou vendre  ">
-  <meta name="keywords" content="Location d'outils">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="author" content="KILOUKOI">
+    <meta name="description" content="Proposition de services a  louer ou vendre  ">
+    <meta name="keywords" content="Location d'outils">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>
-    KILOUKOI - Acceuil
-  </title>
+    <title>
+        KILOUKOI - Acceuil
+    </title>
 
-  <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-  <link rel="stylesheet" href="{{asset("css/base.css")}}">
-
-  {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{asset(" css/bootstrap.min.css ")}}">
+    <link rel="stylesheet" href="{{asset(" css/base.css ")}}"> {% block stylesheets %}{% endblock %}
 
 </head>
 
 <body>
 
 
-  <header>
+    <header>
 
-    <nav class="navbar navbar-expand-lg bg-warning">
-      <a class="navbar-brand" href="#">Kiloukoi</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
-        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <a class="navbar-brand" href="#">Kiloukoi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"> Je consulte les annonces <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> Je loue mes outils </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> Je vend mes outils </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> Forum </a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-      </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"> Je consulte les annonces <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Je loue mes outils </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Je vend mes outils </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Forum </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </nav>
 
-    <h1 class="text-center">KILOUKOI</h1>
-    <h2 class="text-center">L'agence de location d&egrave;outils 2.0</h2>
+        <h1 class="text-center">KILOUKOI</h1>
+        <h2 class="text-center">L'agence de location d&egrave;outils 2.0</h2>
 
-  </header>
+    </header>
 
-  {% block body %}{% endblock %}
-
-
-  <footer class="bg-light">
-    <div class="container-fluid">
-      <div class="row text-center text-dark">
-        <div class="col-md-4 p-5 my-auto">
-          <p>QUELQUES LIENS</p>
-          <p class="dropdown-divider"></p>
-          <ul>
-            <li><a href="{{ path('home') }}">Accueil</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 p-5 my-auto">
-          <span class="logo"><img src="{{ asset('img/logo1.png') }}" alt="logo KILOUKOI"></span>
-        </div>
-
-        <div class="col-md-4 p-5 my-auto">
-          <p>COORDONN&Eacute;ES</p>
-          <p class="dropdown-divider"></p>
-          <p>{{ contact_nom }}</p>
-          <p>{{ contact_adresse }}</p>
-          <p>{{ contact_ville}}</p>
-          <p>{{ contact_telephone }}</p>
-          <p>{{ contact_email }}</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 text-center">
-          <p>{{ copyright }}</p>
-        </div>
-      </div>
-  </footer>
+    {% block body %}{% endblock %}
 
 
+    <footer class="bg-light">
+        <div class="container-fluid">
+            <div class="row text-center text-dark">
+                <div class="col-md-4 p-5 my-auto">
+                    <p>QUELQUES LIENS</p>
+                    <p class="dropdown-divider"></p>
+                    <ul>
+                        <li><a href="{{ path('home') }}">Accueil</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 p-5 my-auto">
+                    <span class="logo"><img src="{{ asset('img/logo1.png') }}" alt="logo KILOUKOI"></span>
+                </div>
 
-  {% block javascripts %}
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  {% endblock %}
+                <div class="col-md-4 p-5 my-auto">
+                    <p>COORDONN&Eacute;ES</p>
+                    <p class="dropdown-divider"></p>
+                    <p>{{ contact_nom }}</p>
+                    <p>{{ contact_adresse }}</p>
+                    <p>{{ contact_ville}}</p>
+                    <p>{{ contact_telephone }}</p>
+                    <p>{{ contact_email }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>{{ copyright }}</p>
+                </div>
+            </div>
+    </footer>
+
+
+
+    {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% endblock %}
 </body>
 
 </html>

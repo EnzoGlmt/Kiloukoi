@@ -13,8 +13,9 @@
         KILOUKOI - Acceuil
     </title>
 
-    <link rel="stylesheet" href="{{asset(" css/bootstrap.min.css ")}}">
-    <link rel="stylesheet" href="{{asset(" css/base.css ")}}"> {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset("css/base.css")}}"> 
+    {% block stylesheets %}{% endblock %}
 
 </head>
 
@@ -38,7 +39,7 @@
                         <a class="nav-link" href="#"> Je loue mes outils </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Je vend mes outils </a>
+                        <a class="nav-link" href="#"> Je vends mes outils </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"> Forum </a>
@@ -56,7 +57,7 @@
 
     </header>
 
-    {% block body %}{% endblock %}
+    {% block body %} {% endblock %}
 
 
     <footer class="bg-light">

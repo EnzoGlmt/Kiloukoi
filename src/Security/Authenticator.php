@@ -41,7 +41,7 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
 
     public function supports(Request $request)
     {
-        return self::LOGIN_ROUTE === $request->attributes->get('_route')
+        return self::LOGIN_ROUTE === $request->attributes->get('app_login')
             && $request->isMethod('POST');
     }
 

@@ -25,21 +25,21 @@ class RegistrationFormType extends AbstractType
         ->add('prenom', TextType::class, [
             'label' => false,
             'attr' => [
-                'placeholder' => 'Prenom'
+                'placeholder' => 'Mon prénom'
             ]
         ])
 
         ->add('nom', TextType::class, [
             'label' => false,
             'attr' => [
-                'placeholder' => 'Nom'
+                'placeholder' => 'Mon nom'
             ]
         ])
 
         ->add('adresse', TextType::class, [
             'label' => false,
             'attr' => [
-                'placeholder' => 'Adresse'
+                'placeholder' => 'Mon adresse'
             ]
         ])
 
@@ -47,7 +47,7 @@ class RegistrationFormType extends AbstractType
             'required'=> false,
             'label' => false,
             'attr' => [
-                'placeholder' => 'Telephone'
+                'placeholder' => "Mon numéro de téléphone (si j'en ai envie...)"
             ]
         ])
 
@@ -55,17 +55,17 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Email'
+                    'placeholder' => 'Mon adresse mail'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter nos termes et conditions',
+                        'message' => 'Eh oui ! Vous devez accepter nos termes et conditions',
                     ]),
                 ],
-                'label' => 'Accepter les termes et conditions '
+                'label' => "Merci d'accepter nos termes et conditions"
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -85,14 +85,14 @@ class RegistrationFormType extends AbstractType
                     new PasswordStrength([
                         // longeur mini
                         'minLength' => 8,
-                        'tooShortMessage' => 'Le mot de passe doit contenir au moins 8 caractères',
+                        'tooShortMessage' => 'Pour des raisons de sécurité, le mot de passe doit contenir au moins 8 caractères',
                         // force mini
                         'minStrength' => 4,
-                        'message' => 'Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial'
+                        'message' => 'Pour des raisons de sécurité, le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial'
                     ])
                 ],
                 'attr' => [                
-                    'placeholder' => 'Mot de passe'
+                    'placeholder' => 'Je choisi un super mot de passe compliqué'
                 ],
                 
             ])

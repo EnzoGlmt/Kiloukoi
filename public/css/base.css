@@ -27,11 +27,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: lighter;
     list-style-type: none;
+   
 }
 /* **************************************** FOOTER **************************************** */
 footer.bg-light {
     background-color: #ff9900e8 !important;
 }
+
 footer .logo img{
     width: 70%;
 }
@@ -40,30 +42,37 @@ footer .logo img{
 footer a{
     color:white;
 }
+
 footer.mb-auto, .my-auto {
     color: white;
 }
+
 .row p{
     color: white;
 }
 
+
 /* **************************************** NAVBAR **************************************** */
 .navbar-toggler-icon {   
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='rgba(0,0,0, )' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important; }  
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='rgba(0,0,0, )' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+ }  
 
-.navbar-toggler { border-color: rgb(0, 0, 0) !important; }
+.navbar-toggler { 
+    border-color: rgb(0, 0, 0) !important;
+ }
 
 a{
     color:rgb(255, 255, 255);
     font-size: 20px;
 }
+
 navbar.btn-warning {
     background-color: #ff9900e8;
 }
+
 /* ****************************************BOUTON**************************************** */
 .btn.btn-warning {
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: lighter;
 }
-

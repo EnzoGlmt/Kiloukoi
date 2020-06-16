@@ -1,0 +1,25 @@
+
+
+.container {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    padding: 0 30px;
+}
+
+.map {
+    position: sticky!important;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.marker.is-active .leaflet-popup-content-wrapper {
+    background-color: deeppink;
+}

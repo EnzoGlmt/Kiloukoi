@@ -4,4 +4,70 @@
 
 {% block body %}
 
+<header>
+    <h1 class="col-12 bg-light text-center text-dark p-5">
+        <div class="text-secondary">JE RECHERCHE ... </div>
+    </h1>
+</header>
+
+<div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 p-5 my-5 bg-secondary rounded text-white">
+
+<form>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="De quel outil ai-je besoin ?">      
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Dans quelle catégorie ?</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Toutes les catégories</option>
+        <option>Maçonnerie</option>
+        <option>Electricité</option>
+        <option>Mécanique</option>
+        <option>Plomberie</option>
+        <option>Electroportatif</option>
+        <option>Menuiserie</option>
+        <option>Jardinage</option>
+        <option>Peinture</option>
+        <option>Echafaudage/Echelle</option>
+        <option>Divers</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Mon lieu de recherche">      
+    </div>
+    <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+              <option selected>Autour de moi...</option>
+              <option value="1">Dans un rayon de 10 kms</option>
+              <option value="2">Dans un rayon de 20 kms</option>
+              <option value="3">Dans un rayon de 30 kms</option>
+              <option value="3">Dans un rayon de 40 kms</option>
+              <option value="3">Dans un rayon de 50 kms</option>
+              <option value="3">Dans un rayon de 100 kms</option>
+            </select>
+          </div>
+          <div class="col-auto my-1">
+            <div class="custom-control custom-checkbox mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+              <label class="custom-control-label" for="customControlAutosizing">Se souvenir de mon choix</label>
+            </div>
+          </div>
+          
+        </div>
+      </form>
+    <div class="row">
+        <div class="col-12 text-center">       
+        <button class="btn btn-outline-light">JE LANCE MA RECHERCHE</button>
+        </div>
+    </div>
+
+
+    
+  </form>
+  </div>
+
+
 {% endblock %}

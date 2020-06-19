@@ -4,6 +4,9 @@
 
 {% block body %}
     <h1>Outils</h1>
+    
+    <div id="map" style="width:400px; height:400px";>
+    </div>
 
     <table class="table">
         <tbody>
@@ -31,4 +34,5 @@
     <a href="{{ path('outils_edit', {'id': outil.id}) }}">edit</a>
 
     {{ include('outils/_delete_form.html.twig') }}
+    
 {% endblock %}

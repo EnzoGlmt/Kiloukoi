@@ -17,19 +17,18 @@
         <input class="form-control" type="text" placeholder="De quel outil ai-je besoin ?">      
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Dans quelle catégorie ?</label>
+      
       <select class="form-control" id="exampleFormControlSelect1">
-        <option>Toutes les catégories</option>
-        <option>Maçonnerie</option>
-        <option>Electricité</option>
-        <option>Mécanique</option>
-        <option>Plomberie</option>
-        <option>Electroportatif</option>
-        <option>Menuiserie</option>
-        <option>Jardinage</option>
-        <option>Peinture</option>
-        <option>Echafaudage/Echelle</option>
-        <option>Divers</option>
+        {{ form_start(form) }}
+
+        <div class="form-group">{{ form_row(form.outil) }}</div>
+        <div class="form-group">{{ form_row(form.categorie) }}</div>
+        <div class="form-group">{{ form_row(form.lieu) }}</div>
+        <div class="form-group">{{ form_row(form.rayon)}}</div>       
+       
+       
+
+        {{ form_end(form) }}       
       </select>
     </div>
     <div class="form-group">

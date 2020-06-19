@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Entity\Outils;
 use App\Entity\User;
 use App\Entity\Categories;
-
+use App\Form\SearchToolType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,8 +17,13 @@ class SearchToolController extends AbstractController
      */
     public function index(Request $request): Response
     {
+       $categories = new Categories();
+       $form = $this-> createForm (SearchToolType::class,$categories);
+       $form ->handleRequest($request);
+
+       
         return $this->render('search_tool/index.html.twig', [
-            'controller_name' => 'SearchToolController',
+            'form' => $form -> createView()
         ]);
     }
 }

@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}CONNEXION{% endblock %}
 
 {% block body %}
+<div class="container center"><br>
+    <h1 class="h3 mb-3 font-weight-normal">Je me connecte à mon compte</h1>
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,7 +16,7 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Je me connecte à mon compte</h1>
+   
     <label for="inputEmail">Mon Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
     <label for="inputPassword">Mon mot de passe</label>
@@ -40,5 +42,7 @@
     <button class="btn btn-lg btn-primary" type="submit">
         C'est parti !
     </button>
-</form>
+ 
+</form><br>
+</div>
 {% endblock %}

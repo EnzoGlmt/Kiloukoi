@@ -14,7 +14,6 @@ class SearchToolType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $categorie=
 
         $builder
             ->add('outil', TextType::class, [
@@ -22,21 +21,24 @@ class SearchToolType extends AbstractType
                     'placeholder' => 'Je recherche ...'
                 ]
             ])
-
             ->add('categorie', EntityType::class, array(
                 'class'=> Categories::class,
                 'choice_label'=> "nom_categorie"
             ))
-
-
             ->add('lieu', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Je me trouve à ...'
                 ]
             ])
             ->add('rayon', ChoiceType::class, [
-                'attr'=> [
-                    'placeholder' => 'Dans un rayon de ... kms'
+                'choices' => [
+                    "Dans un rayon de ... kms"=>0,
+                    "Dans un rayon de 10 kms"=>1,
+                    "Dans un rayon de 20 kms"=>2,
+                    "Dans un rayon de 30 kms"=>3,
+                    "Dans un rayon de 40 kms"=>4,
+                    "Dans un rayon de 50 kms"=>5,
+                    "Dans un rayon de 100 kms"=>6
                 ]
             ])
         ;

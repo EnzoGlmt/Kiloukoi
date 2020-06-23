@@ -33,9 +33,9 @@ class OutilsController extends AbstractController
         $outil = new Outils();
         $form = $this->createForm(OutilsType::class, $outil);
         $form->handleRequest($request);
-
+ //dd($form);
         if ($form->isSubmitted() && $form->isValid()) {
-            dd($form);
+           
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($outil);
             $entityManager->flush();

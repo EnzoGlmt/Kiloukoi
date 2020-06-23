@@ -11,9 +11,9 @@ class CategoriesFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
 
-        $cate = array('Maçonnerie', 'Electricité', 'Plomberie');
+        $categ = array('Toutes catégories','BTP','Electricité','Electroportatif','Jardinage','Maçonnerie','Mécanique','Peinture','Plomberie');
 
-        foreach ($cate as $value) {
+        foreach ($categ as $value) {
             $categories = new Categories();
             $categories->setNomCategorie($value);
             $manager->persist($categories);

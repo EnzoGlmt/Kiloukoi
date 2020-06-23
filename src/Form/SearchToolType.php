@@ -23,7 +23,7 @@ class SearchToolType extends AbstractType
             ])
             ->add('categorie', EntityType::class, array(
                 'class'=> Categories::class,
-                'choice_label'=> "nom_categorie"
+                'choice_label'=> 'nom_categorie'
             ))
             ->add('lieu', TextType::class, [
                 'attr' => [

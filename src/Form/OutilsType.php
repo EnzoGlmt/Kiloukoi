@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Outils;
+use App\Entity\Categories;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class OutilsType extends AbstractType
@@ -15,7 +17,10 @@ class OutilsType extends AbstractType
             ->add('outil')
             ->add('description')
             ->add('image')            
-            ->add('categories')
+            ->add('categorie', EntityType::class, array(
+                'class'=> Categories::class,
+                'choice_label'=> "nom_categorie"
+            ))
             ->add('prix')
             
             

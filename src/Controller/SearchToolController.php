@@ -14,7 +14,7 @@ class SearchToolController extends AbstractController
 
     /**
 
-     * @Route("/search/tool", name="search_tool")
+     * @Route("/search/tool", name="search_tool",methods={"GET","POST"});
 
      */
 
@@ -26,8 +26,14 @@ class SearchToolController extends AbstractController
 
        $form ->handleRequest($request);
 
+
+       if ($form->isSubmitted() && $form->isValid()) {
+         dd($form);  
        
 
+        return $this->redirectToRoute('outils_index');    }
+
+       
         return $this->render('search_tool/index.html.twig', [
 
             'form' => $form -> createView()

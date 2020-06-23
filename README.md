@@ -91,3 +91,4 @@ git reset --hard  :cela supprime toute les modifs faite donc faire tres attentio
 '''''''''
 
 '''''''''
+# J'ai modifier 

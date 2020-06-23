@@ -90,5 +90,4 @@ php bin/console doctrine:schema:update --force
 git reset --hard  :cela supprime toute les modifs faite donc faire tres attentions. 
 '''''''''
 
-'''''''''
 

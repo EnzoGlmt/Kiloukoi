@@ -1,9 +1,27 @@
 // On initialise la latitude et la longitude de Paris (centre de la carte)
-var lat = 48.852969;
-var lon = 2.349903;
 var macarte = null;
+
+
+
+function geoloc() { // ou tout autre nom de fonction
+    var geoSuccess = function (position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
+        startPos = position;
+        lat = startPos.coords.latitude;
+        lon = startPos.coords.longitude;
+        initMap(lat,lon);
+        
+    };
+    var geoFail = function () { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
+        console.log("refus");
+    };
+    // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
+    
+}
+
 // Fonction d'initialisation de la carte
-function initMap() {
+
+function initMap(lat, lon) {
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     macarte = L.map('map').setView([lat, lon], 11);
     // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
@@ -16,5 +34,14 @@ function initMap() {
 }
 window.onload = function () {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-    initMap();
+
+    if ("geolocation" in navigator) {
+        geoloc();
+        console.log("lat: " + lat + " - lon: " + lon);
+        
+        /* la géolocalisation est disponible */
+    } else {
+        console.log("Vous n'avez pas accepter la geolocalisation")
+        /* la géolocalisation n'est pas disponible */
+    }
 };

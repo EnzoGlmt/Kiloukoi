@@ -17,7 +17,7 @@ class OutilsType extends AbstractType
             ->add('outil')
             ->add('description')
             ->add('image')            
-            ->add('categorie', EntityType::class, array(
+            ->add('categories', EntityType::class, array(
                 'class'=> Categories::class,
                 'choice_label'=> "nom_categorie"
             ))

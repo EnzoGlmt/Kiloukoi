@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Outils;
 use App\Entity\Categories;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,12 +26,12 @@ class SearchToolType extends AbstractType
                 'class'=> Categories::class,
                 'choice_label'=> 'nom_categorie'
             ))
-            ->add('lieu', TextType::class, [
+            ->add('emplacement', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Je me trouve à ...'
                 ]
             ])
-            ->add('rayon', ChoiceType::class, [
+            ->add('je_recherche_autour_de_moi', ChoiceType::class, [
                 'choices' => [
                     "Dans un rayon de ... kms"=>0,
                     "Dans un rayon de 10 kms"=>1,
@@ -48,7 +49,7 @@ class SearchToolType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here 
-            'data_class' => SearchToolType::class,
+            'data_class' => Outils::class,
         ]);
     }
 }

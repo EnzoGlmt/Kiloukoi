@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Resultats{% endblock %} 
+
+
+{% block body %}
+
+<h1>outil index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>outil</th>
+            <th>description</th>
+            <th>image</th>
+           {# <th>user</th>
+            <th>categories</th>#}
+            <th>prix</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for outil in searchOutils %}
+        <tr>          
+                     
+            <td>{{ outil.outil }}</td>
+            <td>{{ outil.description }}</td>
+            <td>{{ outil.image }}</td>
+           {# <td>{{ outil.user }}</td>
+            <td>{{ outil.categories }}</td>#}
+            <td>{{ outil.prix }}</td>
+
+                <a href="{{ path('outils_show', {'id': outil.id}) }}">show</a>
+               
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="9">Aucun outil n'est disponible</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+{% endblock %}

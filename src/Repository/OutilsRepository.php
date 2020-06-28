@@ -46,5 +46,20 @@ class OutilsRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+ 
     */
+    /**
+     * @return Outils[]
+     */
+    public function findAllSameTool($nomOutil): array
+    {
+       
+    
+            $query = $this->createQueryBuilder('o')
+              ->where('o.outil LIKE :nomOutil')
+              ->setParameter('nomOutil' , '%'.$nomOutil.'%')
+              ->getQuery();        
+             return $query->getResult();
+      
+    }
 }

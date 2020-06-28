@@ -18,13 +18,11 @@ class OutilsType extends AbstractType
             ->add('description')
             ->add('image')            
             ->add('categories', EntityType::class, array(
+                'mapped'=>false,
                 'class'=> Categories::class,
                 'choice_label'=> "nom_categorie"
             ))
-            ->add('prix')
-            
-            
-        ;
+            ->add('prix');
     }
 
     public function configureOptions(OptionsResolver $resolver)

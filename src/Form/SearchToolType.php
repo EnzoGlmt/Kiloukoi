@@ -22,16 +22,16 @@ class SearchToolType extends AbstractType
                     'placeholder' => 'Je recherche ...'
                 ]
             ])
-            ->add('categories', EntityType::class, array(
+            ->add('categorie', EntityType::class, array(
                 'class'=> Categories::class,
-                'choice_label'=> 'nom_categorie'
+                'choice_label'=> "nom_categorie"
             ))
-            ->add('emplacement', TextType::class, [
+            ->add('lieu', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Je me trouve à ...'
                 ]
             ])
-            ->add('je_recherche_autour_de_moi', ChoiceType::class, [
+            ->add('rayon', ChoiceType::class, [
                 'choices' => [
                     "Dans un rayon de ... kms"=>0,
                     "Dans un rayon de 10 kms"=>1,

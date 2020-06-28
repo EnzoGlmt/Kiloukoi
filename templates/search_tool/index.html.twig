@@ -1,52 +1,38 @@
 
 
-{% extends 'base.html.twig' %} {% block title %}Recherche{% endblock %} {% block body %}
-
+{% extends 'base.html.twig' %} 
+{% block title %}Recherche{% endblock %} 
+{% block body %}
 <header>
-
     <h1 class="col-12 bg-light text-center text-dark p-5">
-
         <div class="text-secondary">JE RECHERCHE ... </div>
-
     </h1>
-
 </header>
 
 <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 p-5 my-5 bg-secondary rounded text-white">
 
-   
 
         {{ form_start(form) }}
-
         <div class="form-group">{{ form_row(form.outil) }}</div>
-        <div class="form-group">{{ form_row(form.categories) }}</div>
-        <div class="form-group">{{ form_row(form.emplacement) }}</div>
-        <div class="form-group">{{ form_row(form.je_recherche_autour_de_moi)}}</div>
-
-        
-
+        <div class="form-group">{{ form_row(form.categorie) }}</div>
+        <div class="form-group">{{ form_row(form.lieu) }}</div>
+        <div class="form-group">{{ form_row(form.rayon)}}</div>
+      
         <div class="col-auto my-1">
-
             <div class="custom-control custom-checkbox mr-sm-2">
                 <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
                 <label class="custom-control-label" for="customControlAutosizing">Se souvenir de mon choix</label>
             </div>
-
         </div>
-
         <div class="col-12 text-center">
             <input class="btn btn-outline-light" type="submit" value="JE LANCE MA RECHERCHE">
         </div>
-
         {{ form_end(form) }}
 
 </div>
 
 
-
 </div>
 
+
 {% endblock %}
-
-
-

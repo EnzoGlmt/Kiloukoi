@@ -9,15 +9,17 @@
     opacity: 0.5;
 }
 .mainAcceuil h1{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 120px;
     text-align: center;
     padding-top: 150px;
+  
 }
 .mainAcceuil h2{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 70px;
     padding-top: 150px;
+    
 }
 /* **************************************** SETTINGS **************************************** */
 
@@ -28,11 +30,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: lighter;
     list-style-type: none;
+    
+    }
    
-}
 /* **************************************** FOOTER **************************************** */
 footer.bg-light {
     background-color: #ff9900e8 !important;
+  
 }
 
 footer .logo img{
@@ -41,18 +45,19 @@ footer .logo img{
 
 /* le footer a c'est pour les lien comme accueil en bas dans quelques liens */
 footer a{
-    color:white;
+    color:rgb(0, 0, 0);
 }
 
 footer.mb-auto, .my-auto {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .row p{
-    color: white;
+    color: rgb(0, 0, 0);
 }
-
-
+.col-md-4.p-5.my-auto{
+    margin-top: 10px;
+}
 /* **************************************** NAVBAR **************************************** */
 
 
@@ -61,28 +66,89 @@ footer.mb-auto, .my-auto {
  }
 
 a{
-    color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     font-size: 20px;
 }
 
 navbar.btn-warning {
-    background-color: rgba(255, 153, 0, 0.91);
+    background-color: rgba(255, 153, 0, 0.527);
 }
 
 /* ****************************************BOUTON**************************************** */
 .btn.btn-warning {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); 
     font-size: 20px;
     font-weight: lighter;
 }
 .dropdown-menu{
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-weight: lighter;
+color: rgb(0, 0, 0);
+font-size: 20px;
+font-weight: lighter;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 10rem;
+padding: .5rem 0;
+margin: .125rem 0 0;
+font-size: 1rem;
+color: #000000;
+text-align: left;
+list-style: none;
+background-color: rgba(0, 0, 0, 0.199);
+background-clip: padding-box;
+border: 1px solid rgb(0, 0, 0);
+border-radius: .20rem;
 }
+
 .dropdown-menu a {
-    color:white; 
+    color:rgb(0, 0, 0)
 }
 .dropdown-menu.show {
-    color:white; 
+    color:rgb(0, 0, 0); 
+  
 }
+.btn-groupe{
+    background-color: transparent;
+}
+/*****************************FORMULAIRE CONNEXION******************************/
+
+.mb-3, .my-3{
+    margin-bottom: 5rem !important;
+}
+
+/******************************USER_INDEX/SHOW/EDIT********************************************/
+
+.table td a {
+    color: black;
+
+}
+.table{
+    text-align: center;
+}
+.table thead {
+    display: inline-block !important;
+    text-align: center;
+
+    }
+.table thead tbody{
+padding-left: 10px; ;
+display: inline-block !important;
+vertical-align: inherit;
+border-top-color: inherit;
+border-right-color: inherit;
+border-bottom-color: inherit;
+border-left-color: inherit; 
+}
+td, th {
+    display: inline-block;
+    vertical-align: inherit;
+    padding-left:10px;
+}
+.table thead th{
+    text-align: center;
+    margin:5px;
+}
+

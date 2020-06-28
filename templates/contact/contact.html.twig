@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}contact{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center p-5 bg-light">
+                <h1 class="font-weight-light">
+                    KILOUKOI
+                    <div class="dropdown-divider"></div>
+                    Contact
+                </h1>
+            </div>
+            <div class="col-4 offset-4 p-5">
+                {{ form_start(contactForm) }}
+                    {{ form_row(contactForm.nom) }}
+                    {{ form_row(contactForm.email) }}
+                    {{ form_row(contactForm.sujet) }}
+                    {{ form_row(contactForm.message) }}
+                    <div class="col-12 text-center">{{ form_row(contactForm.envoyer) }}</div>
+                {{ form_end(contactForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

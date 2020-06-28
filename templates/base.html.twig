@@ -13,7 +13,9 @@
         KILOUKOI - Accueil
     </title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
     <link rel="stylesheet" href="{{asset("css/base.css")}}">
     {% block stylesheets %}{% endblock %}
@@ -34,30 +36,33 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
+            <a class="nav-link" href="{{ path('home') }}">ACCUEIL</a></li>
+            <li class="nav-item">
             <a class="nav-link" href="{{ path('app_register') }}">JE LOUE MES OUTILS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ path('search_tool') }}">JE RECHERCHE UN OUTIL</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FORUM</a>
+          </li>
         </ul>
 
         <div class="btn-group">
           <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MON COMPTE <span class="caret"></span>
-          <button>
+          </button>
           <ul class="dropdown-menu">
-             <li><a href="#" title="Lien 1">Lien 1</a></li>
-             <li><a href="#" title="Lien 2">Lien 2</a></li>
-             <li><a href="#" title="Lien 3">Lien 3</a></li>
-             <li role="separator" class="divider"< </li>
-             <li><a href="#" title="Lien 4">Lien 4></a></li>
+             <li><a href="#" title="Lien 1">MON PROFIL</a></li>
+             <li><a href="outils" title="Lien 2">MES OUTILS</a></li>
+             <li><a href="#" title="Lien 3">MES LOCATIONS</a></li>
+             <li><a href="login" title="Lien 3">CONNEXION</a></li>
+             <li><a href="logout" title="Lien 3">DECONNEXION</a></li>
+             
+            
           </ul>
         </div>
       </div>
-      
     </nav>
-
-    
-
   </header>
 
   {% block body %}{% endblock %}
@@ -70,13 +75,12 @@
           <p>QUELQUES LIENS</p>
           <p class="dropdown-divider"></p>
           <ul>
-            <li><a href="{{ path('home') }}">Accueil</a></li>
+            <li><a href="{{ path('contact') }}">CONTACT</a></li>
           </ul>
         </div>
         <div class="col-md-4 p-5 my-auto">
           <span class="logo"><img src="{{ asset('img/logofooter.png') }}" alt="logo KILOUKOI"></span>
         </div>
-
         <div class="col-md-4 p-5 my-auto">
           <p>COORDONN&Eacute;ES</p>
           <p class="dropdown-divider"></p>
@@ -92,6 +96,7 @@
           <p>{{ copyright }}</p>
         </div>
       </div>
+    </div>
   </footer>
 
 

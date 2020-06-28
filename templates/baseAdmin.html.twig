@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="KILOUKOI">
+        <meta name="description" content="Proposition de services a  louer ou vendre  ">
+        <meta name="keywords" content="Location d'outils">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+           KILOUKOI admin - 
+            {% block title %}bienvenue{% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+
+    <body>
+
+        {#Pour faire des liens sur l'admin, soit onr les met dans le fichier admin.html.twig (aller voir l'exemple)
+        ou ont peux le mettre egalement dans le fichier baseAdmin.html.twig. 
+        voici un exemple en dessous: #}
+
+        {% block body %}
+            <div class="col-2 bg-secondary text-white text-center" id="aside">
+                <ul>
+                    <li class="p-2"><a href="{{ path('admin') }}">Adnim</a></li>
+                    <li class="p-2"><a href="{{ path('user_index') }}">Utilisateurs</a></li>
+                    <li class="p-2"><a href="{{ path('outils_index') }}">outils</a></li>
+                    <li class="p-2"><a href="{{ path('app_logout') }}" class="btn btn-sm btn-outline-light">D&eacute;connexion</a></li>
+                </ul>
+            </div>
+        {% endblock %}
+
+        {% for label, messages in app.flashes(['success', 'warning']) %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    <div class="col-12 p-3 text-center fixed-bottom bg-{{ label }}">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        
+
+        <footer class="bg-dark">
+            <div class="container-fluid">
+                <div class="row text-center text-white">
+                    <div class="col-12">
+                        <p>{{ copyright }}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+{% block javascripts %}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"></script>
+{% endblock %}
+    </body>
+
+</html>

@@ -22,6 +22,9 @@ security:
             guard:
                 authenticators:
                     - App\Security\Authenticator
+            #     form_login:
+            #     login_path: login
+            #     check_path: login
             logout:
                 path: app_logout
                 # where to redirect after logout
@@ -37,9 +40,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          
-         - { path: ^/user, roles: ROLE_ADMIN }
+         - { path: ^/admin, roles: ROLE_ADMIN }
          # - { path: ^/register, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         # - { path: ^/tools, roles: ROLE_USER } 
         # - { path: ^/tools, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        
 

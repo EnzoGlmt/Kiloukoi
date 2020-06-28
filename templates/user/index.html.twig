@@ -3,12 +3,12 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1>Utilisateurs</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th></th>
                 <th>Email</th>
                 <th>Roles</th>
                 <th>Password</th>
@@ -16,7 +16,7 @@
                 <th>Prenom</th>
                 <th>Adresse</th>
                 <th>Telephone</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <a href="{{ path('user_new') }}">Crée un nouveau Utilisateur</a>
 {% endblock %}

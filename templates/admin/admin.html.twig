@@ -1,0 +1,44 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}admin{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock stylesheets %}
+
+{% block body %}
+
+    <div class="container-fluid p-0">
+
+        <header class="bg-dark p-5">
+            <h1 class="text-center text-white">Accueil de l'espace administrateur</h1>
+        </header>
+
+        <div class="content">
+
+            <div class="row">
+
+                {{ parent() }}
+                
+                {#
+                    Pour faire des liens sur l'admin, soit onr les met dans le fichier admin.html.twig 
+                    ou ont peux le mettre egalement dans le fichier baseAdmin.html.twig. 
+                    voici un exemple dessous:
+                    <div class="col-2 bg-secondary text-white" id="aside">
+                    <ul>
+                        <li>lien</li>
+                        <li>lien</li>
+                        <li>lien</li>
+                        <li>lien</li>
+                        <li>lien</li>
+                    </ul>
+                </div> #}
+
+               
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

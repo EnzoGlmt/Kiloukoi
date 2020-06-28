@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Outils;
 use App\Form\OutilsType;
+use App\Repository\CategoriesRepository;
 use App\Repository\OutilsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,21 +29,27 @@ class OutilsController extends AbstractController
     /**
      * @Route("/new", name="outils_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request,CategoriesRepository $categoriesRepository): Response
     {
+        // Attention il manquait une option "mapped"=>false dans le OutilsType pour catégories
         $outil = new Outils();
         $form = $this->createForm(OutilsType::class, $outil);
-        $form->handleRequest($request);
- //dd($form);
-        if ($form->isSubmitted() && $form->isValid()) {
-           
+        // condition légérement modifiée mais 
+        if ($form->handleRequest($request)->isSubmitted() && $form->isValid()) {
+            //je récupère séparémment la catégorie de l'outil(son id en int)
+            $data = $request->request->get('outils')["categories"];
+            // j'utilise le repository de catégories pour récupérer
+            $cat = $categoriesRepository->findOneById($data);
+            // pour addCategory cf l'entity Outil methode générée par symfony grace au manytomany avec Cat
+            $outil->addCategory($cat);
+            // pour finir on flush le nouvel outil dans la table
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($outil);
             $entityManager->flush();
 
             return $this->redirectToRoute('outils_index');
         }
-
+        
         return $this->render('outils/new.html.twig', [
             'outil' => $outil,
             'form' => $form->createView(),
@@ -69,7 +76,6 @@ class OutilsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('outils_index');
         }
 

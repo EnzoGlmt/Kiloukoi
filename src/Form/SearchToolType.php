@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Outils;
 use App\Entity\Categories;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,9 +22,9 @@ class SearchToolType extends AbstractType
                     'placeholder' => 'Je recherche ...'
                 ]
             ])
-            ->add('categories', EntityType::class, array(
+            ->add('categorie', EntityType::class, array(
                 'class'=> Categories::class,
-                'choice_label'=> 'nom_categorie'
+                'choice_label'=> "nom_categorie"
             ))
             ->add('lieu', TextType::class, [
                 'attr' => [
@@ -48,7 +49,7 @@ class SearchToolType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here 
-            'data_class' => SearchToolType::class,
+            'data_class' => Outils::class,
         ]);
     }
 }
